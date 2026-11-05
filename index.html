@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>モノラジオ商会</title>
+<meta name="description" content="趣味でものづくりをしている、モノラジオ商会の作品集。AI と電子工作と 3D で、ちょっと楽しいものを作っています。">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="モノラジオ商会">
+<meta property="og:title" content="モノラジオ商会">
+<meta property="og:description" content="AI と電子工作と 3D で、ちょっと楽しいものを作っています。">
+<meta property="og:url" content="https://monoradio.jp/">
+<meta property="og:image" content="https://monoradio.jp/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@monoradio102">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><i aria-hidden="true"></i>モノラジオ商会</a>
+  <nav><a href="#works">Works</a><a href="#shop">Shop</a><a href="#support">Support</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <p class="eyebrow">Monoradio &mdash; things made for fun</p>
+  <h1><span>趣味で、</span><span>ものづくりを</span><span>しています。</span></h1>
+  <p class="lead">AI と電子工作と 3D で、ちょっと楽しいものを。<br>つくったものは、できるだけ誰でも使えるように公開しています。</p>
+</section>
+
+<section id="works">
+  <div class="head">
+    <h2>Works</h2>
+    <div class="filters" role="group" aria-label="作品のしぼりこみ">
+      <button class="on" data-f="all">すべて</button>
+      <button data-f="soft">ソフトウェア</button>
+      <button data-f="elec">電子工作</button>
+      <button data-f="art">映像・3D</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="shop">
+  <div class="head"><h2>Shop &amp; Commission</h2></div>
+  <ul class="rows">
+    <li><a href="https://otetsudaineko.booth.pm/"><span class="k">BOOTH</span><span class="v">つくったものを、少しずつ販売しています</span><span class="arrow">→</span></a></li>
+    <li><a href="https://coconala.com/users/5829606"><span class="k">ココナラ</span><span class="v">制作のご依頼は、こちらから受け付けています</span><span class="arrow">→</span></a></li>
+  </ul>
+</section>
+
+<section id="support">
+  <div class="head"><h2>Support</h2></div>
+  <p class="text">作品の多くは無料で公開していて、ものラジオは毎朝続けています。気に入ったら、GitHub Sponsors で応援してもらえると、続ける力になります。作品を誰かに教えてもらったり、リポジトリに Star をもらえたりするだけでも、十分うれしいです。</p>
+  <p><a class="btn" href="https://github.com/sponsors/monoradio102">GitHub Sponsors で応援する</a></p>
+</section>
+
+<section id="contact">
+  <div class="head"><h2>Contact</h2></div>
+  <ul class="rows">
+    <li><a href="mailto:info@monoradio.jp"><span class="k">Mail</span><span class="v">info@monoradio.jp</span><span class="arrow">→</span></a></li>
+    <li><a href="https://x.com/monoradio102"><span class="k">X</span><span class="v">@monoradio102</span><span class="arrow">→</span></a></li>
+    <li><a href="https://note.com/monoradio_102"><span class="k">note</span><span class="v">monoradio_102</span><span class="arrow">→</span></a></li>
+    <li><a href="https://github.com/monoradio102"><span class="k">GitHub</span><span class="v">monoradio102</span><span class="arrow">→</span></a></li>
+  </ul>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 モノラジオ商会</span>
+  <a href="privacy.html">プライバシーポリシー</a>
+</footer>
+
+<script>
+// the works, newest first. cat: soft / elec / art. The first link is where the picture goes
+const X = "https://x.com/monoradio102/status/", GH = "https://github.com/monoradio102/";
+const WORKS = [
+  { title: "ものラジオ", date: "2026", cat: ["soft", "art"], img: "img/works/monoradio.jpg", pos: "left center",
+    text: "キャラクターが毎朝、AI と 3D のニュースを読む番組。GitHub のリポジトリ 1 つで、誰でも開局できます。",
+    links: [["聞く", "https://monoradio102.github.io/myradio/"], ["GitHub", GH + "myradio"], ["解説", "https://note.com/monoradio_102/n/n03a5d2efcd92"]] },
+  { title: "5万円で作るカメラ", date: "制作中", cat: ["elec"], img: "img/works/camera.jpg",
+    text: "小さな作品をきれいに撮れて、PC から操作できるカメラ。撮影は Claude Code にまかせています。",
+    links: [["X", X + "2117588939053916559"], ["撮影のようす", X + "2117594705055957347"]] },
+  { title: "Tilt to Peek", date: "2026", cat: ["soft", "art"], img: "img/works/tilt.jpg",
+    text: "スマホを傾けると、絵の中をのぞきこめる。1 枚の絵から作った 360° の動画を、傾きに合わせて送ります。",
+    links: [["試す", "https://monoradio102.github.io/tilt-to-peek/"], ["GitHub", GH + "tilt-to-peek"]] },
+  { title: "星屑灯", date: "制作中", cat: ["elec"], img: "img/works/hoshikuzu.jpg",
+    text: "2 本のガイガー＝ミュラー管が同時に反応したとき、つまり宇宙線が通り抜けたときだけ、淡く光るランプ。",
+    links: [["X", X + "2116792043771212088"], ["基板", X + "2113811762596495848"]] },
+  { title: "Breadboard Viewer", date: "2026", cat: ["soft", "elec"], img: "img/works/breadboard.jpg",
+    text: "ブレッドボードの配線を JSON で書いて、絵として共有する。AI エージェントが読み書きしやすい形にしました。",
+    links: [["エディタ", "https://monoradio102.github.io/breadboard-viewer/"], ["GitHub", GH + "breadboard-viewer"]] },
+  { title: "AI時代の新たなLチカ", date: "2026", cat: ["elec"], img: "img/works/lchika.jpg",
+    text: "ブレッドボードに AI を呼び出して、話しかけるだけで LED を光らせる、小さなボイスアシスタント。",
+    links: [["デモ動画", X + "2105485178928066602"], ["GitHub", GH + "ai-lchika"]] },
+  { title: "ねこべや", date: "2026", cat: ["soft"], sprite: "img/works/mikan_eat.webp",
+    text: "Claude Code の作業のようすを、ねこみみの女の子「みかん」が小窓で見せてくれるプラグイン。",
+    links: [["紹介動画", X + "2104227635870228928"], ["GitHub", GH + "nekobeya"]] },
+  { title: "Avatar Viewer", date: "2026", cat: ["soft", "art"], img: "img/works/avatar.jpg",
+    text: "ブラウザで動く VRM / GLB のアバタービューワー。アニメーションの再生や WebAR にも対応。",
+    links: [["デモ", "https://gltf-studio.lab.monoradio.jp"], ["GitHub", GH + "avatar-viewer"]] },
+  { title: "電気ネコ", date: "2024", cat: ["elec"], img: "img/works/denkineko.jpg",
+    text: "おしゃべりできる卓上ロボット。ESP32 でひとりで Wi-Fi につながり、小さなマイクとスピーカーで話します。",
+    links: [["ProtoPedia", "https://protopedia.net/prototype/6450"], ["GitHub", "https://github.com/mikaka-robotics/denkineko"]] },
+  { title: "猫お化けフィギュア", date: "BOOTH", cat: ["art"], img: "img/works/nekoobake.jpg",
+    text: "BOOTH で販売しているフィギュアです。",
+    links: [["BOOTH", "https://otetsudaineko.booth.pm/items/9070666"]] },
+];
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+document.getElementById("grid").innerHTML = WORKS.map((w, i) => `
+  <article class="work" data-cat="${w.cat.join(" ")}">
+    <a class="pic" href="${w.links[0][1]}">${w.sprite
+      ? `<span class="sprite" data-sheet="${w.sprite}" role="img" aria-label="${esc(w.title)}"></span>`
+      : `<img src="${w.img}" alt="${esc(w.title)}" loading="lazy"${w.pos ? ` style="object-position:${w.pos}"` : ""}>`}</a>
+    <div class="line"><h3>${esc(w.title)}</h3><span class="date">${w.date}</span></div>
+    <p>${esc(w.text)}</p>
+    <p class="links">${w.links.map(([l, u]) => `<a href="${u}">${l}</a>`).join("")}</p>
+  </article>`).join("");
+document.querySelectorAll(".filters button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".filters button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll(".work").forEach(w => w.hidden = b.dataset.f !== "all" && !w.dataset.cat.split(" ").includes(b.dataset.f));
+});
+// みかん on the ねこべや card eats ramen: a 10 x 4 sprite sheet; she moves only while the pointer is on the card
+document.querySelectorAll(".sprite").forEach(s => {
+  s.style.backgroundImage = `url(${s.dataset.sheet})`;
+  const card = s.closest(".work"); let f = 0, timer = 0;
+  const show = () => s.style.backgroundPosition = `${(f % 10) / 9 * 100}% ${Math.floor(f / 10) / 3 * 100}%`;
+  card.addEventListener("pointerenter", () => { if (!timer) timer = setInterval(() => { f = (f + 1) % 40; show(); }, 120); });
+  card.addEventListener("pointerleave", () => { clearInterval(timer); timer = 0; });
+});
+</script>
+</body>
+</html>
